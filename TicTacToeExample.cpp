@@ -9,7 +9,10 @@ int main(string args[])
 {
     TicTacToe game1;
     game1.resetGame();
-
+    game1.setLocation(1, 1, 'O');
+    game1.setLocation(1, 2, 'X');
+    game1.setLocation(1, 3, 'O');
+    game1.printBoard();
    
 }
 
