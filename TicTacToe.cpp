@@ -15,29 +15,26 @@ void TicTacToe::setLocation(int row, int column, char player)
 
 bool TicTacToe::checkWin(char player)
 {
-	// check rows 
+	
 
 	for (int i = 0; i < 3; i++)
 	{
-		if (board[i][0] == board[i][1] == board[i][2] == player)
+		// check rows 
+		if (board[i][0] ==player && board[i][1] == player && board[i][2] == player)
 			return true;
 
-	}
-
-	//check columns 
-
-	for (int i = 0; i < 3; i++)
-	{
-		if (board[0][i] == board[1][i] == board[2][i] == player)
+		//check columns 
+		if (board[0][i] == player && board[1][i] == player && board[2][i] == player)
 			return true;
-
 	}
+
+	
 
 	// check diagonals 
-	if (board[0][0] == board[1][1] == board[2][2] == player)
+	if (board[0][0] == player &&  board[1][1] == player && board[2][2] == player)
 		return true;
 
-	if (board[0][2] == board[1][1] == board[2][0] == player)
+	if (board[0][2] == player && board[1][1] == player && board[2][0] == player)
 		return true;
 
 
@@ -69,5 +66,24 @@ void TicTacToe::resetGame()
 		}
 
 	}
+
+}
+
+void TicTacToe::play()
+{
+	// reset board
+
+	// start with X player 
+
+	// loop while there is no winner 
+	  // ask the current player to place their char on a location 
+	  // check for a win 
+	     // if there is a winner, announce it, then end the game
+	     // else switch to the next player 
+
+	// end the game: 
+	   // one of the players wins
+	   // draw 
+
 
 }
