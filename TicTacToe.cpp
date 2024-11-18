@@ -72,7 +72,7 @@ void TicTacToe::resetGame()
 }
 
 void TicTacToe::play()
-{    
+{    // TODO: add exception handling 
 	// reset board
 	resetGame();
 	// start with X player 
@@ -89,6 +89,7 @@ void TicTacToe::play()
 		cin >> r;
 		cin >> c;
 		setLocation(r, c, currentPlayer);
+		printBoard();// print the board
 		// check for a win 
 		// if there is a winner, announce it, then end the game
 		gameWon=checkWin(currentPlayer);

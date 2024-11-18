@@ -8,13 +8,14 @@ using namespace std;
 int main(string args[])
 {
     TicTacToe game1;
-    game1.resetGame();
+    game1.play();
+   /* game1.resetGame();
     game1.setLocation(1, 1, 'O');
     game1.setLocation(2, 2, 'O');
     game1.setLocation(3, 3, 'O');
     game1.printBoard();
    
-    cout << game1.checkWin('O');
+    cout << game1.checkWin('O');*/
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
