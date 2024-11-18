@@ -9,6 +9,8 @@ int main(string args[])
 {
     TicTacToe game1;
     game1.play();
+    // TODO: Have the game keep going until the user decides to quit the program. Once the user quits,
+    // print out how many times X won, and how many times O won
    /* game1.resetGame();
     game1.setLocation(1, 1, 'O');
     game1.setLocation(2, 2, 'O');
