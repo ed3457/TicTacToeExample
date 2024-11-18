@@ -8,6 +8,8 @@ void TicTacToe::setLocation(int row, int column, char player)
 	if (player != 'o' && player != 'O' && player != 'x' && player != 'X')
 		throw 2;// wrong player symbol 
 
+	if (board[row - 1][column - 1] != ' ')
+		throw 3;// the cell is not empty!
 
 	// set the location to the player char 
 	board[row-1][column-1] = player;
@@ -70,20 +72,53 @@ void TicTacToe::resetGame()
 }
 
 void TicTacToe::play()
-{
+{    
 	// reset board
-
+	resetGame();
 	// start with X player 
-
+	char currentPlayer = 'X';
+	bool gameWon = false;
+	int counter = 0;
 	// loop while there is no winner 
-	  // ask the current player to place their char on a location 
-	  // check for a win 
-	     // if there is a winner, announce it, then end the game
-	     // else switch to the next player 
+	while (true)
+	{
+		counter += 1;
+		cout << currentPlayer << " please enter a location:\n";
+		int r, c;
+	    // ask the current player to place their char on a location
+		cin >> r;
+		cin >> c;
+		setLocation(r, c, currentPlayer);
+		// check for a win 
+		// if there is a winner, announce it, then end the game
+		gameWon=checkWin(currentPlayer);
+		if (gameWon)
+		{
+			cout << "Player " << currentPlayer << " won!\n";
+			break;
 
-	// end the game: 
-	   // one of the players wins
-	   // draw 
+		}
+		else if (counter == 9)
+		{
+			
+	       // draw 
+			cout << "Draw!\n";
+			break;
+		}
+		else
+		{
+
+			// else switch to the next player 
+
+			currentPlayer = (currentPlayer == 'x' || currentPlayer == 'X') ? 'O' : 'X';
+
+		}
+
+	}
+	   
+	 
+
+	
 
 
 }
