@@ -6,9 +6,47 @@
 #include "TicTacToe.h"
 using namespace std;
 int main(string args[])
-{
-    TicTacToe game1;
-    game1.play();
+{   
+    try {
+        TicTacToe game1;
+        char userChoice = ' ';
+        while (true)
+        {
+            game1.play();
+
+            cout << "Do you want to play again? (y,n)\n";
+            cin >> userChoice;
+            if (userChoice == 'n')
+                break;
+
+
+        }
+
+        cout << "Number of X wins:" << game1.getXWin() << endl;
+        cout << "Number of O wins:" << game1.getOWin() << endl;
+        cout << "Number of draws:" << game1.getDraw() << endl;
+
+    }
+
+    catch (int code)
+    {
+        switch (code)
+        {
+        case 1:
+        {}
+        break;
+
+        case 2:
+        {}
+        break;
+        case 3:
+        {}
+        break;
+        default:
+            break;
+        }
+
+    }
     // TODO: Have the game keep going until the user decides to quit the program. Once the user quits,
     // print out how many times X won, and how many times O won
    /* game1.resetGame();
@@ -20,13 +58,3 @@ int main(string args[])
     cout << game1.checkWin('O');*/
 }
 
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file

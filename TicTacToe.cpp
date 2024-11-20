@@ -96,6 +96,9 @@ void TicTacToe::play()
 		if (gameWon)
 		{
 			cout << "Player " << currentPlayer << " won!\n";
+			if (currentPlayer == 'O') oWin++;
+			else
+				xWin++;
 			break;
 
 		}
@@ -104,6 +107,7 @@ void TicTacToe::play()
 			
 	       // draw 
 			cout << "Draw!\n";
+			draw++;
 			break;
 		}
 		else
@@ -122,4 +126,19 @@ void TicTacToe::play()
 	
 
 
+}
+
+int TicTacToe::getXWin()
+{
+	return xWin;
+}
+
+int TicTacToe::getOWin()
+{
+	return oWin;
+}
+
+int TicTacToe::getDraw()
+{
+	return draw;
 }

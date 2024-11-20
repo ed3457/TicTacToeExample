@@ -7,7 +7,9 @@ class TicTacToe
 private: 
 
 	char board[3][3];
-
+	int xWin;
+	int oWin;
+	int draw;
 public:
 
 	void setLocation(int row, int column, char player);
@@ -15,6 +17,10 @@ public:
 	void printBoard();
 	void resetGame();
 	void play();
+
+	int getXWin();
+	int getOWin();
+	int getDraw();
 
 
 };
